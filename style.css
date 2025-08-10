@@ -631,49 +631,46 @@ form legend{
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(121, 183, 140, 0.4);
 }
-
 .convert-btn:active {
     transform: translateY(-1px);
 }
-
-.outro {
+.outro{
     min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 2rem;
 }
-
 .outro .content {
     text-align: center;
     max-width: 600px;
     width: 100%;
 }
-
-.outro .content p {
+.outro .content p{
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: bold;
     margin-bottom: 3rem;
     color: var(--accent-cyan);
-    text-shadow: 0 0 15px var(--accent-cyan);
-    transform: scale(0.9);
+    transition: 1s ease-in-out;
+}
+.outro .content .scroll:nth-child(1){
     opacity: 0;
-    transition: all 0.8s ease;
+    transform: translateY(-30px), scale(0.9);
+    text-shadow: none;
 }
-
-.outro .content p.scroll {
+.outro .content .scroll:nth-child(1).view{
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0), scale(1);
+    text-shadow: 0 0 15px var(--accent-cyan);
 }
-
-.outro .links {
+.outro .links{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
 }
 
-.outro .links a {
+.outro .links a{
     display: inline-block;
     padding: 15px 30px;
     background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
@@ -682,27 +679,30 @@ form legend{
     border-radius: 25px;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: all 0.5s ease;
+    transition: all 1s ease-in-out 1s;
     position: relative;
     overflow: hidden;
-    transform: translateY(20px);
+}
+.outro .links .scroll:nth-child(1){
+    transform: translateX(50px);
     opacity: 0;
 }
-
-.outro .links a.scroll {
+.outro .links .scroll:nth-child(1).view{
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
-
-.outro .links a:hover {
+.outro .links a:hover{
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(121, 183, 140, 0.4);
 }
-
-.outro .links a:nth-child(2) {
-    transition-delay: 0.2s;
+.outro .links .scroll:nth-child(2){
+    transform: translateX(-50px);
+    opacity: 0;
 }
-
+.outro .links .scroll:nth-child(2).view{
+    opacity: 1;
+    transform: translateX(0);
+}
 @media (max-width: 768px) {
     .define .content,
     .siunit .content {
