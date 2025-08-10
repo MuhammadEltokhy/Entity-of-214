@@ -56,6 +56,27 @@ header nav{
     backdrop-filter: blur(15px) brightness(1.3469) contrast(1.5);
     position: relative;
 }
+header nav input{
+    width: 50%;
+    max-width: 100px;
+    padding: 10px;
+    background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+header nav input:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(121, 183, 140, 0.4);
+}
 nav:hover{
     box-shadow: 0 0 15px 12px rgba(1, 107, 8, 0.705), 
     -0.5px 1px 20px 5px rgba(5, 101, 31, 0.603),
@@ -745,7 +766,7 @@ form legend{
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .converter-form {
+    form {
         padding: 1.5rem;
     }
 
@@ -753,8 +774,6 @@ form legend{
         padding: 2rem 1rem 1rem;
     }
 }
-
-
 footer {
     background: linear-gradient(135deg, rgba(72, 81, 61, 0.9), rgba(121, 160, 133, 0.8));
     padding: 3rem 2rem 2rem;
@@ -843,8 +862,12 @@ footer .lanc span {
     font-weight: bold;
 }
 @media (max-width: 768px) {
-    header nav ul {
-        display: none;
+    header nav ul{
+        flex-wrap: wrap;
+        width: 20%
+    }
+    header nav{
+        top: 80%;
     }
     .menu-toggle {
         display: flex;
