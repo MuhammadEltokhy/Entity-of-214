@@ -1,3 +1,16 @@
+const scroll = new IntersectionObserver(((entries)=>entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+        console.log(entry.target)
+        entry.target.classList.add("view")
+    }
+    else{
+        entry.target.classList.remove("view")
+    }
+    })
+),{})
+const elements = document.querySelectorAll(".scroll")
+elements.forEach(el=>scroll.observe(el))
+
 SetMode();
 function SetMode() {
     //Check if currentmode is present or not to set it
