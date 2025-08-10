@@ -63,7 +63,7 @@ header nav input{
     background: linear-gradient(45deg, var(--accent-green), var(--accent-cyan));
     border: none;
     border-radius: 25px;
-    color: white;
+    color: rgb(2, 98, 2);
     font-size: 0.8rem;
     text-align: center;
     font-weight: bold;
