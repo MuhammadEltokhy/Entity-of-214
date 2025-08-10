@@ -11,11 +11,12 @@
   - **Length units**: Includes common (meter, kilometer) and niche ones (angstrom, Planck length, Bohr radius, parsec, light year, and many more).
   - **Engineering units** (accessible via the *Eng Conservs* tab).
   - **Fluid mechanics units** (available under the *Fluid Conservs* tab).
+- ** Dark and light mode
 
 ##  How to Use
 
 1. Navigate to the desired converter:
-   - Home → Length Converter
+   - Home → Currency & Length Converter
    - *Eng Conservs* → Engineering Units
    - *Fluid Conservs* → Fluid Mechanics Units
 2. Select the unit you want to convert **From** and the unit to convert **To**.
@@ -32,6 +33,4 @@ Created by **Entity of 214**
 
 ## What After That?
 Just open the website, and convert your values!
-
-## Usage
 
