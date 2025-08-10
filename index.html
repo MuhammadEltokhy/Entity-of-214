@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.freepik.com/256/1171/1171622.png?semt=ais_white_label">
-    <link rel="stylesheet" href="style.css" id="theme-style">
+    <link rel="stylesheet" href="style.css">
     <title>Unity | Home</title>
 </head>
 <body>
+    
     <header>
         <nav>
             <div class="logo">
-                <img src="#" alt="Unity Logo">
+                <img src="https://avatars.githubusercontent.com/u/426196?s=200&v=4" alt="Unity Logo">
                 <span>Unity</span>
             </div>
             <ul>
@@ -19,207 +20,171 @@
                 <li><a href="eng.html">Eng Conservs</a></li>
                 <li><a href="fluid.html">Fluid Conservs</a></li>
             </ul>
-            <input type="button" value="Convert mode" id="convert-btn" onclick="ConvertMode()">
         </nav>
     </header>
     <section class="intro">
         <section class="content">
             <article class="text">
-                <h1>Welcome to <span>Unity</span> <span>|</span></h1>
-                <p>This is Unity. A simple, flexible, accurate units convertor tool 
+                <h1 class="scroll">Welcome to <span>Unity</span></h1>
+                <p class="scroll">This is Unity. A simple, flexible, accurate units convertor tool 
                     that helps you in your physics class. With Unity, you can change from 
                     specific unit to another like a flash! What do you wait to do that?</p>
             </article>
-            <article class="icon">
-                <div class="icon-wp">
-                    <img src="#" alt="simple icon about units">
+            <article class="icon scroll">
+                <div class="icon-wp scroll">
+                    <img class="scroll" src="https://tuitionphysics.com/wp-content/uploads/2020/05/physics-measurements-physical-quantities-and-si-units.jpg" alt="simple icon about units">
                 </div>
             </article>
         </section>
     </section>
-    <section class="define">
-        <section class="content">
-            <article class="icon">
-                <div class="icon-wp">
-                    <img src="#" alt="simple icon about units">
+    <section class="define scroll">
+        <section class="content scroll">
+            <article class="icon scroll">
+                <div class="icon-wp scroll">
+                    <img class="scroll" src="https://i.pinimg.com/736x/89/68/00/896800b5aab7d2aac179e7be6b6c7336.jpg" alt="simple icon about units">
                 </div>
             </article>
-            <article class="about">
-                <h1>About <span>Units</span></h1>
-                <p>This is Unity. A simple, flexible, accurate units convertor tool 
+            <article class="about scroll">
+                <h1 class="scroll">About <span class="scroll">Units</span></h1>
+                <p class="scroll">This is Unity. A simple, flexible, accurate units convertor tool 
                     that helps you in your physics class. With Unity, you can change from 
                     specific unit to another like a flash! What do you wait to do that?</p>
             </article>
         </section>
     </section>
-    <section class="siunit">
-        <section class="content">
-            <article class="text">
-                <h1>About <span>Units</span></h1>
-                <p>This is Unity. A simple, flexible, accurate units convertor tool 
+    <section class="siunit scroll">
+        <section class="content scroll">
+            <article class="text scroll">
+                <h1 class="scroll">SI Units</h1>
+                <p class="scroll">This is Unity. A simple, flexible, accurate units convertor tool 
                     that helps you in your physics class. With Unity, you can change from 
                     specific unit to another like a flash! What do you wait to do that?</p>
             </article>
-            <article class="units">
-                <div class="icons">
-                    <div class="unit-img" style="--i:1;" data-id="contentI"><img src="#"></div>
-                    <div class="unit-img" style="--i:2;" data-id="contentII"><img src="#"></div>
-                    <div class="unit-img" style="--i:3;" data-id="contentIII"><img src="#"></div>
-                    <div class="unit-img" style="--i:4;" data-id="contentIV"><img src="#"></div>
-                    <div class="unit-img" style="--i:5;" data-id="contentV"><img src="#"></div>
-                    <div class="unit-img" style="--i:6;" data-id="contentVI"><img src="#"></div>
-                    <div class="unit-img" style="--i:7;" data-id="contentVII"><img src="#"></div>
-                </div>
-                <div class="ic-cont">
-                    <div class="cont-bx active" id="contentI">
-                        <div class="card">
-                            <div class="bx"><img src="#"></div>
-                            <div class="text-bx">
-                                <span id="Siunit">Meter</span>
-                                <p>The International used unit for lengths' measurements.</p>
-                            </div>
-                        </div>
-                    </div>
+            <article class="units scroll">
+                <div class="icon-wp scroll">
+                    <img class="scroll" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrAnm9Ssc7eSRW2hPASc7PniSwjaS6iXn7-w&s" alt="simple icon about units">
                 </div>
             </article>
         </section>
     </section>
-    <form>
-        <fieldset>
-            <legend>Currency</legend>
-            <div class="form-rw">
-                <label for="currency-from">From</label>
-                <input type="number" id="currency-from" step="any" inputmode="decimal" placeholder="Enter value">
-                <select id="currency-unit-from">
-                </select>
-            </div>
-            <div class="form-rw">
-                <label for="currency-to">To</label>
-                <input type="number" id="currency-to" readonly aria-readonly="true" placeholder="Result">
-                <select id="currency-unit-to">
-                </select>
-            </div>
-            <button type="button" class="convert-btn" id="currency-convert" onclick="Convert()">Convert</button>
-        </fieldset>
-    </form>
-    <footer>
-        <section class="sample">
-        <section class="content">
-            <span>Try a sample of our convertors, and convert to your own meter unit.</span>
-            <form class="converter-form">
-                <fieldset>
-                    <legend>Length Converter</legend>
-                    <div class="form-group">
-                        <label for="input">From</label>
-                        <div class="input">
-                            <input type="number" name="input" id="input" step="any" inputmode="decimal" placeholder="Enter value">
-                            <select id="units-selection">
-                                <option value="" selected>Choose your value</option>
-                                <option value="m" data-factor="1">meter</option>
-                                <option value="km" data-factor="1000">kilometer</option>
-                                <option value="dm" data-factor="0.1">decimeter</option>
-                                <option value="cm" data-factor="0.01">centimeter</option>
-                                <option value="mm" data-factor="0.001">millimeter</option>
-                                <option value="µm" data-factor="0.000001">micrometer</option>
-                                <option value="nm" data-factor="0.000000001">nanometer</option>
-                                <option value="Em" data-factor="1000000000000000000">exameter</option>
-                                <option value="Pm" data-factor="1000000000000000">petameter</option>
-                                <option value="Tm" data-factor="1000000000000">terameter</option>
-                                <option value="Gm" data-factor="1000000000">gigameter</option>
-                                <option value="Mm" data-factor="1000000">megameter</option>
-                                <option value="hm" data-factor="100">hectometer</option>
-                                <option value="dam" data-factor="10">dekameter</option>
-                                <option value="mi" data-factor="1609.344">mile</option>
-                                <option value="yd" data-factor="0.9144">yard</option>
-                                <option value="ft" data-factor="0.3048">foot</option>
-                                <option value="in" data-factor="0.0254">inch</option>
-                                <option value="ly" data-factor="9460730472580800">light year</option>
-                                <option value="µ" data-factor="0.000001">micron</option>
-                                <option value="pm" data-factor="0.000000000001">picometer</option>
-                                <option value="fm" data-factor="0.000000000000001">femtometer</option>
-                                <option value="am" data-factor="0.000000000000000001">attometer</option>
-                                <option value="pc" data-factor="30856775814913673">parsec</option>
-                                <option value="AU" data-factor="149597870700">astronomical unit</option>
-                                <option value="lea" data-factor="4828.032">league</option>
-                                <option value="fur" data-factor="201.168">furlong</option>
-                                <option value="ch" data-factor="20.1168">chain</option>
-                                <option value="rope" data-factor="6.096">rope</option>
-                                <option value="rd" data-factor="5.0292">rod</option>
-                                <option value="hand" data-factor="0.1016">hand</option>
-                                <option value="span" data-factor="0.2286">span</option>
-                                <option value="fig" data-factor="0.022225">finger</option>
-                                <option value="nail" data-factor="0.05715">nail</option>
-                                <option value="A" data-factor="0.0000000001">angstrom</option>
-                                <option value="plk" data-factor="1.616255e-35">Planck length</option>
-                                <option value="er" data-factor="2.8179403262e-15">Electron radius</option>
-                                <option value="bohr" data-factor="5.29177210903e-11">Bohr radius</option>
+    <section class="sample scroll">
+        <section class="content scroll">
+            <span class="scroll">Try a sample of our convertors, and convert to your own meter unit.</span>
+            <form class="scroll">
+                <fieldset class="scroll">
+                    <legend class="scroll">Length Converter</legend>
+                    <div class="form-group scroll">
+                        <label for="input" class="scroll">From</label>
+                        <div class="input scroll">
+                            <input class="scroll" type="number" name="input" id="input" step="any" inputmode="decimal" placeholder="Enter value">
+                            <select class="scroll" id="units-selection">
+                                <option class="scroll" value="" selected>Choose your value</option>
+                                <option class="scroll" value="m" data-factor="1">meter</option>
+                                <option class="scroll" value="km" data-factor="1000">kilometer</option>
+                                <option class="scroll" value="dm" data-factor="0.1">decimeter</option>
+                                <option class="scroll" value="cm" data-factor="0.01">centimeter</option>
+                                <option class="scroll" value="mm" data-factor="0.001">millimeter</option>
+                                <option class="scroll" value="µm" data-factor="0.000001">micrometer</option>
+                                <option class="scroll" value="nm" data-factor="0.000000001">nanometer</option>
+                                <option class="scroll" value="Em" data-factor="1000000000000000000">exameter</option>
+                                <option class="scroll" value="Pm" data-factor="1000000000000000">petameter</option>
+                                <option class="scroll" value="Tm" data-factor="1000000000000">terameter</option>
+                                <option class="scroll" value="Gm" data-factor="1000000000">gigameter</option>
+                                <option class="scroll" value="Mm" data-factor="1000000">megameter</option>
+                                <option class="scroll" value="hm" data-factor="100">hectometer</option>
+                                <option class="scroll" value="dam" data-factor="10">dekameter</option>
+                                <option class="scroll" value="mi" data-factor="1609.344">mile</option>
+                                <option class="scroll" value="yd" data-factor="0.9144">yard</option>
+                                <option class="scroll" value="ft" data-factor="0.3048">foot</option>
+                                <option class="scroll" value="in" data-factor="0.0254">inch</option>
+                                <option class="scroll" value="ly" data-factor="9460730472580800">light year</option>
+                                <option class="scroll" value="µ" data-factor="0.000001">micron</option>
+                                <option class="scroll" value="pm" data-factor="0.000000000001">picometer</option>
+                                <option class="scroll" value="fm" data-factor="0.000000000000001">femtometer</option>
+                                <option class="scroll" value="am" data-factor="0.000000000000000001">attometer</option>
+                                <option class="scroll" value="pc" data-factor="30856775814913673">parsec</option>
+                                <option class="scroll" value="AU" data-factor="149597870700">astronomical unit</option>
+                                <option class="scroll" value="lea" data-factor="4828.032">league</option>
+                                <option class="scroll" value="fur" data-factor="201.168">furlong</option>
+                                <option class="scroll" value="ch" data-factor="20.1168">chain</option>
+                                <option class="scroll" value="rope" data-factor="6.096">rope</option>
+                                <option class="scroll" value="rd" data-factor="5.0292">rod</option>
+                                <option class="scroll" value="hand" data-factor="0.1016">hand</option>
+                                <option class="scroll" value="span" data-factor="0.2286">span</option>
+                                <option class="scroll" value="fig" data-factor="0.022225">finger</option>
+                                <option class="scroll" value="nail" data-factor="0.05715">nail</option>
+                                <option class="scroll" value="A" data-factor="0.0000000001">angstrom</option>
+                                <option class="scroll" value="plk" data-factor="1.616255e-35">Planck length</option>
+                                <option class="scroll" value="er" data-factor="2.8179403262e-15">Electron radius</option>
+                                <option class="scroll" value="bohr" data-factor="5.29177210903e-11">Bohr radius</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="output">To</label>
-                        <div class="output">
-                            <input type="number" name="output" id="output" readonly aria-readonly="true" placeholder="Result">
-                            <select id="units-values">
-                                <option value="" selected>Choose your value</option>
-                                <option value="m" data-factor="1">meter</option>
-                                <option value="km" data-factor="1000">kilometer</option>
-                                <option value="dm" data-factor="0.1">decimeter</option>
-                                <option value="cm" data-factor="0.01">centimeter</option>
-                                <option value="mm" data-factor="0.001">millimeter</option>
-                                <option value="µm" data-factor="0.000001">micrometer</option>
-                                <option value="nm" data-factor="0.000000001">nanometer</option>
-                                <option value="Em" data-factor="1000000000000000000">exameter</option>
-                                <option value="Pm" data-factor="1000000000000000">petameter</option>
-                                <option value="Tm" data-factor="1000000000000">terameter</option>
-                                <option value="Gm" data-factor="1000000000">gigameter</option>
-                                <option value="Mm" data-factor="1000000">megameter</option>
-                                <option value="hm" data-factor="100">hectometer</option>
-                                <option value="dam" data-factor="10">dekameter</option>
-                                <option value="mi" data-factor="1609.344">mile</option>
-                                <option value="yd" data-factor="0.9144">yard</option>
-                                <option value="ft" data-factor="0.3048">foot</option>
-                                <option value="in" data-factor="0.0254">inch</option>
-                                <option value="ly" data-factor="9460730472580800">light year</option>
-                                <option value="µ" data-factor="0.000001">micron</option>
-                                <option value="pm" data-factor="0.000000000001">picometer</option>
-                                <option value="fm" data-factor="0.000000000000001">femtometer</option>
-                                <option value="am" data-factor="0.000000000000000001">attometer</option>
-                                <option value="pc" data-factor="30856775814913673">parsec</option>
-                                <option value="AU" data-factor="149597870700">astronomical unit</option>
-                                <option value="lea" data-factor="4828.032">league</option>
-                                <option value="fur" data-factor="201.168">furlong</option>
-                                <option value="ch" data-factor="20.1168">chain</option>
-                                <option value="rope" data-factor="6.096">rope</option>
-                                <option value="rd" data-factor="5.0292">rod</option>
-                                <option value="hand" data-factor="0.1016">hand</option>
-                                <option value="span" data-factor="0.2286">span</option>
-                                <option value="fig" data-factor="0.022225">finger</option>
-                                <option value="nail" data-factor="0.05715">nail</option>
-                                <option value="A" data-factor="0.0000000001">angstrom</option>
-                                <option value="plk" data-factor="1.616255e-35">Planck length</option>
-                                <option value="er" data-factor="2.8179403262e-15">Electron radius</option>
-                                <option value="bohr" data-factor="5.29177210903e-11">Bohr radius</option>
+                    <div class="form-group scroll">
+                        <label for="output" class="scroll">To</label>
+                        <div class="output scroll">
+                            <input class="scroll" type="number" name="output" id="output" readonly aria-readonly="true" placeholder="Result">
+                            <select class="scroll" id="units-values">
+                                <option class="scroll" value="" selected>Choose your value</option>
+                                <option class="scroll" value="m" data-factor="1">meter</option>
+                                <option class="scroll" value="km" data-factor="1000">kilometer</option>
+                                <option class="scroll" value="dm" data-factor="0.1">decimeter</option>
+                                <option class="scroll" value="cm" data-factor="0.01">centimeter</option>
+                                <option class="scroll" value="mm" data-factor="0.001">millimeter</option>
+                                <option class="scroll" value="µm" data-factor="0.000001">micrometer</option>
+                                <option class="scroll" value="nm" data-factor="0.000000001">nanometer</option>
+                                <option class="scroll" value="Em" data-factor="1000000000000000000">exameter</option>
+                                <option class="scroll" value="Pm" data-factor="1000000000000000">petameter</option>
+                                <option class="scroll" value="Tm" data-factor="1000000000000">terameter</option>
+                                <option class="scroll" value="Gm" data-factor="1000000000">gigameter</option>
+                                <option class="scroll" value="Mm" data-factor="1000000">megameter</option>
+                                <option class="scroll" value="hm" data-factor="100">hectometer</option>
+                                <option class="scroll" value="dam" data-factor="10">dekameter</option>
+                                <option class="scroll" value="mi" data-factor="1609.344">mile</option>
+                                <option class="scroll" value="yd" data-factor="0.9144">yard</option>
+                                <option class="scroll" value="ft" data-factor="0.3048">foot</option>
+                                <option class="scroll" value="in" data-factor="0.0254">inch</option>
+                                <option class="scroll" value="ly" data-factor="9460730472580800">light year</option>
+                                <option class="scroll" value="µ" data-factor="0.000001">micron</option>
+                                <option class="scroll" value="pm" data-factor="0.000000000001">picometer</option>
+                                <option class="scroll" value="fm" data-factor="0.000000000000001">femtometer</option>
+                                <option class="scroll" value="am" data-factor="0.000000000000000001">attometer</option>
+                                <option class="scroll" value="pc" data-factor="30856775814913673">parsec</option>
+                                <option class="scroll" value="AU" data-factor="149597870700">astronomical unit</option>
+                                <option class="scroll" value="lea" data-factor="4828.032">league</option>
+                                <option class="scroll" value="fur" data-factor="201.168">furlong</option>
+                                <option class="scroll" value="ch" data-factor="20.1168">chain</option>
+                                <option class="scroll" value="rope" data-factor="6.096">rope</option>
+                                <option class="scroll" value="rd" data-factor="5.0292">rod</option>
+                                <option class="scroll" value="hand" data-factor="0.1016">hand</option>
+                                <option class="scroll" value="span" data-factor="0.2286">span</option>
+                                <option class="scroll" value="fig" data-factor="0.022225">finger</option>
+                                <option class="scroll" value="nail" data-factor="0.05715">nail</option>
+                                <option class="scroll" value="A" data-factor="0.0000000001">angstrom</option>
+                                <option class="scroll" value="plk" data-factor="1.616255e-35">Planck length</option>
+                                <option class="scroll" value="er" data-factor="2.8179403262e-15">Electron radius</option>
+                                <option class="scroll" value="bohr" data-factor="5.29177210903e-11">Bohr radius</option>
                             </select>
                         </div>
                     </div>
-                    
-                    <button type="button" class="convert-btn">Convert</button>
+                    <button class="convert-btn scroll" type="button">Convert</button>
                 </fieldset>
             </form>
         </section>
     </section>
-    <section class="outro">
-        <section class="content">
-            <p>What u wait for??</p>
-            <div class="links">
-                <a href="eng.html">Convert Engineering Units</a>
-                <a href="fluid.html">Convert Fluid Mechanics Units</a>
+    <section class="outro scroll">
+        <section class="content scroll">
+            <p class="scroll">What u wait for??</p>
+            <div class="links scroll">
+                <a class="scroll" href="eng.html">Convert Engineering Units</a>
+                <a class="scroll" href="fluid.html">Convert Fluid Mechanics Units</a>
             </div>
         </section>
     </section>
+    <script src="index.js"></script>
+    <footer>
         <section class="heads">
-            <div class="logo"><img src="#"></div>
+            <div class="logo"><img src="https://avatars.githubusercontent.com/u/426196?s=200&v=4"></div>
             <ul>
                 <li class="ft-home"><a href="index.html">Home</a></li>
                 <li class="ft-eng"><a href="eng.html">Eng Conservs</a></li>
@@ -248,7 +213,5 @@
             " web developers "</p>
         </section>
     </footer>
-    <script src="index.js"></script>
 </body>
 </html>
-
