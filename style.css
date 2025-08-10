@@ -862,9 +862,8 @@ footer .lanc span {
     font-weight: bold;
 }
 @media (max-width: 768px) {
-    header nav ul{
-        flex-wrap: wrap;
-        width: 20%
+    header nav ul {
+        display: none;
     }
     header nav{
         top: 80%;

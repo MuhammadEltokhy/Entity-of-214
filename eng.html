@@ -22,11 +22,12 @@
             <input type="button" value="Convert mode" id="convert-btn" onclick="ConvertMode()">
         </nav>
     </header>
+    <br><br><br><br><br><br><br><br>
     <section class="converter">
         <form>
             <label style="display: block" for="quantity-selector">Selected your desired physical quantity:</label>
             <select id="quantity-selector">
-                <option value="N">Select</option>
+                <option value="N" selected>Choose your physical quantity</option>
                 <option value="A">Area</option>
                 <option value="E">Energy</option>
                 <option value="F">Force</option>
@@ -48,6 +49,7 @@
                     <label for="area-from">From</label>
                     <input type="number" id="area-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="area-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">square meter</option>
                         <option factor="1000000">square kilometer</option>
                         <option factor="0.0001">square centimeter</option>
@@ -61,6 +63,7 @@
                     <label for="area-to">To</label>
                     <input type="number" id="area-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="area-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">square meter</option>
                         <option factor="1000000">square kilometer</option>
                         <option factor="0.0001">square centimeter</option>
@@ -80,6 +83,7 @@
                     <label for="energy-from">From</label>
                     <input type="number" id="energy-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="energy-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">joule</option>
                         <option factor="1000">kilojoule</option>
                         <option factor="4.184">calorie</option>
@@ -92,6 +96,7 @@
                     <label for="energy-to">To</label>
                     <input type="number" id="energy-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="energy-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">joule</option>
                         <option factor="1000">kilojoule</option>
                         <option factor="4.184">calorie</option>
@@ -110,6 +115,7 @@
                     <label for="force-from">From</label>
                     <input type="number" id="force-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="force-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton</option>
                         <option factor="1000">kilonewton</option>
                         <option factor="4.4482216152605">pound-force</option>
@@ -120,6 +126,7 @@
                     <label for="force-to">To</label>
                     <input type="number" id="force-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="force-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton</option>
                         <option factor="1000">kilonewton</option>
                         <option factor="4.4482216152605">pound-force</option>
@@ -136,6 +143,7 @@
                     <label for="speed-from">From</label>
                     <input type="number" id="speed-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="speed-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">meter per second</option>
                         <option factor="0.277777778">kilometer per hour</option>
                         <option factor="0.44704">mile per hour</option>
@@ -146,6 +154,7 @@
                     <label for="speed-to">To</label>
                     <input type="number" id="speed-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="speed-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">meter per second</option>
                         <option factor="0.277777778">kilometer per hour</option>
                         <option factor="0.44704">mile per hour</option>
@@ -162,6 +171,7 @@
                     <label for="data-from">From</label>
                     <input type="number" id="data-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="data-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">bit</option>
                         <option factor="8">byte</option>
                         <option factor="8000">kilobyte (decimal)</option>
@@ -174,6 +184,7 @@
                     <label for="data-to">To</label>
                     <input type="number" id="data-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="data-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">bit</option>
                         <option factor="8">byte</option>
                         <option factor="8000">kilobyte (decimal)</option>
@@ -192,6 +203,7 @@
                     <label for="acceleration-from">From</label>
                     <input type="number" id="acceleration-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="acceleration-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">meter per second squared</option>
                         <option factor="9.80665">standard gravity</option>
                     </select>
@@ -200,6 +212,7 @@
                     <label for="acceleration-to">To</label>
                     <input type="number" id="acceleration-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="acceleration-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">meter per second squared</option>
                         <option factor="9.80665">standard gravity</option>
                     </select>
@@ -214,6 +227,7 @@
                     <label for="torque-from">From</label>
                     <input type="number" id="torque-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="torque-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton meter</option>
                         <option factor="1.3558179483314004">pound-foot</option>
                     </select>
@@ -222,6 +236,7 @@
                     <label for="torque-to">To</label>
                     <input type="number" id="torque-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="torque-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton meter</option>
                         <option factor="1.3558179483314004">pound-foot</option>
                     </select>
@@ -236,6 +251,7 @@
                     <label for="pressure-from">From</label>
                     <input type="number" id="pressure-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="pressure-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">pascal</option>
                         <option factor="1000">kilopascal</option>
                         <option factor="100000">bar</option>
@@ -247,6 +263,7 @@
                     <label for="pressure-to">To</label>
                     <input type="number" id="pressure-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="pressure-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">pascal</option>
                         <option factor="1000">kilopascal</option>
                         <option factor="100000">bar</option>
@@ -264,6 +281,7 @@
                     <label for="time-from">From</label>
                     <input type="number" id="time-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="time-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">second</option>
                         <option factor="60">minute</option>
                         <option factor="3600">hour</option>
@@ -274,6 +292,7 @@
                     <label for="time-to">To</label>
                     <input type="number" id="time-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="time-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">second</option>
                         <option factor="60">minute</option>
                         <option factor="3600">hour</option>
@@ -290,6 +309,7 @@
                     <label for="angle-from">From</label>
                     <input type="number" id="angle-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="angle-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">radian</option>
                         <option factor="0.017453292519943295">degree</option>
                         <option factor="0.015707963267948967">grad (gon)</option>
@@ -299,6 +319,7 @@
                     <label for="angle-to">To</label>
                     <input type="number" id="angle-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="angle-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">radian</option>
                         <option factor="0.017453292519943295">degree</option>
                         <option factor="0.015707963267948967">grad (gon)</option>
@@ -314,6 +335,7 @@
                     <label for="moment-from">From</label>
                     <input type="number" id="moment-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="moment-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram meter squared</option>
                         <option factor="0.0000001">gram centimeter squared</option>
                     </select>
@@ -322,6 +344,7 @@
                     <label for="moment-to">To</label>
                     <input type="number" id="moment-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="moment-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram meter squared</option>
                         <option factor="0.0000001">gram centimeter squared</option>
                     </select>
