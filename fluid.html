@@ -16,269 +16,287 @@
             </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="eng.html">Eng Conservs</a></li>
-                <li><a href="fluid.html">Fluid Conservs</a></li>
+                <li><a href="eng.html">Eng Converts</a></li>
+                <li><a href="fluid.html">Fluid Converts</a></li>
             </ul>
             <input type="button" value="Convert mode" id="convert-btn" onclick="ConvertMode()">
         </nav>
     </header>
     <section class="converter">
         <form>
+            <label style="display: block" for="quantity-selector">Selected your desired physical quantity:</label>
+            <select id="quantity-selector">
+                <option value="N">Select</option>
+                <option value="VF">Volume Flow Rate</option>
+                <option value="MF">Mass Flow Rate</option>
+                <option value="CM">Concentration(Molar)</option>
+                <option value="CS">Concentration(Solution)</option>
+                <option value="M">Mass</option>
+                <option value="V">Volume</option>
+                <option value="D">Density</option>
+                <option value="DV">Dynamic Viscosity</option>
+                <option value="KV">Kinematic Viscosity</option>
+                <option value="ST">Surface Tension</option>
+                <option value="P">Permeability</option>
+            </select>
+            <input type="button" id="quantity-selector-btn" value="Select Quantity" onclick="SelectQuantity()">
+        </form>
+        <form style="display: none" id="volumeflow-form">
             <fieldset>
-                <legend>Flow (Volumetric)</legend>
+                <legend>Volume Flow Rate</legend>
                 <div class="form-rw">
-                    <label for="flow-from">From</label>
-                    <input type="number" id="flow-from" step="any" inputmode="decimal" placeholder="Enter value">
-                    <select id="flow-unit-from">
-                        <option value="m^3/s" data-factor="1">cubic meter per second</option>
-                        <option value="L/s" data-factor="0.001">liter per second</option>
-                        <option value="m^3/h" data-factor="0.000277778">cubic meter per hour</option>
-                        <option value="L/min" data-factor="0.000016667">liter per minute</option>
+                    <label for="volumeflow-from">From</label>
+                    <input type="number" id="volumeflow-from" step="any" inputmode="decimal" placeholder="Enter value">
+                    <select id="volumeflow-unit-from">
+                        <option factor="1">cubic meter per second</option>
+                        <option factor="0.001">liter per second</option>
+                        <option factor="0.000277778">cubic meter per hour</option>
+                        <option factor="0.000016667">liter per minute</option>
                     </select>
                 </div>
                 <div class="form-rw">
-                    <label for="flow-to">To</label>
-                    <input type="number" id="flow-to" readonly aria-readonly="true" placeholder="Result">
-                    <select id="flow-unit-to">
-                        <option value="m^3/s" data-factor="1">cubic meter per second</option>
-                        <option value="L/s" data-factor="0.001">liter per second</option>
-                        <option value="m^3/h" data-factor="0.000277778">cubic meter per hour</option>
-                        <option value="L/min" data-factor="0.000016667">liter per minute</option>
+                    <label for="volumeflow-to">To</label>
+                    <input type="number" id="volumeflow-to" readonly aria-readonly="true" placeholder="Result">
+                    <select id="volumeflow-unit-to">
+                        <option factor="1">cubic meter per second</option>
+                        <option factor="0.001">liter per second</option>
+                        <option factor="0.000277778">cubic meter per hour</option>
+                        <option factor="0.000016667">liter per minute</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="flow-convert">Convert</button>
+                <button type="button" class="convert-btn" id="volumeflow-convert" onclick="Convert('VF')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="massflow-form">
             <fieldset>
-                <legend>Flow — Mass</legend>
+                <legend>Mass Flow Rate</legend>
                 <div class="form-rw">
                     <label for="massflow-from">From</label>
                     <input type="number" id="massflow-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="massflow-unit-from">
-                        <option value="kg/s" data-factor="1">kilogram per second</option>
-                        <option value="g/s" data-factor="0.001">gram per second</option>
-                        <option value="kg/h" data-factor="0.000277778">kilogram per hour</option>
-                        <option value="lb/s" data-factor="0.45359237">pound per second</option>
+                        <option factor="1">kilogram per second</option>
+                        <option factor="0.001">gram per second</option>
+                        <option factor="0.000277778">kilogram per hour</option>
+                        <option factor="0.45359237">pound per second</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="massflow-to">To</label>
                     <input type="number" id="massflow-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="massflow-unit-to">
-                        <option value="kg/s" data-factor="1">kilogram per second</option>
-                        <option value="g/s" data-factor="0.001">gram per second</option>
-                        <option value="kg/h" data-factor="0.000277778">kilogram per hour</option>
-                        <option value="lb/s" data-factor="0.45359237">pound per second</option>
+                        <option factor="1">kilogram per second</option>
+                        <option factor="0.001">gram per second</option>
+                        <option factor="0.000277778">kilogram per hour</option>
+                        <option factor="0.45359237">pound per second</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="massflow-convert">Convert</button>
+                <button type="button" class="convert-btn" id="massflow-convert" onclick="Convert('MF')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="molconc-form">
             <fieldset>
-                <legend>Concentration — Molar</legend>
+                <legend>Concentration(Molar)</legend>
                 <div class="form-rw">
                     <label for="molconc-from">From</label>
                     <input type="number" id="molconc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="molconc-unit-from">
-                        <option value="mol/m^3" data-factor="1">mole per cubic meter</option>
-                        <option value="mol/L" data-factor="1000">mole per liter (M)</option>
+                        <option factor="1">mole per cubic meter</option>
+                        <option factor="1000">mole per liter (M)</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="molconc-to">To</label>
                     <input type="number" id="molconc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="molconc-unit-to">
-                        <option value="mol/m^3" data-factor="1">mole per cubic meter</option>
-                        <option value="mol/L" data-factor="1000">mole per liter (M)</option>
+                        <option factor="1">mole per cubic meter</option>
+                        <option factor="1000">mole per liter (M)</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="molconc-convert">Convert</button>
+                <button type="button" class="convert-btn" id="molconc-convert" onclick="Convert('CM')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="solconc-form">
             <fieldset>
-                <legend>Concentration — Solution</legend>
+                <legend>Concentration(Solution)</legend>
                 <div class="form-rw">
                     <label for="solconc-from">From</label>
                     <input type="number" id="solconc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="solconc-unit-from">
-                        <option value="mg/L" data-factor="1">milligram per liter</option>
-                        <option value="ppm" data-factor="1">parts per million</option>
-                        <option value="pct_wv" data-factor="10000">percent (w/v)</option>
+                        <option factor="1">milligram per liter</option>
+                        <option factor="1">parts per million</option>
+                        <option factor="10000">percent (w/v)</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="solconc-to">To</label>
                     <input type="number" id="solconc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="solconc-unit-to">
-                        <option value="mg/L" data-factor="1">milligram per liter</option>
-                        <option value="ppm" data-factor="1">parts per million</option>
-                        <option value="pct_wv" data-factor="10000">percent (w/v)</option>
+                        <option factor="1">milligram per liter</option>
+                        <option factor="1">parts per million</option>
+                        <option factor="10000">percent (w/v)</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="solconc-convert">Convert</button>
+                <button type="button" class="convert-btn" id="solconc-convert" onclick="Convert('CS')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="mass-form">
             <fieldset>
                 <legend>Mass</legend>
                 <div class="form-rw">
                     <label for="mass-from">From</label>
                     <input type="number" id="mass-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="mass-unit-from">
-                        <option value="kg" data-factor="1">kilogram</option>
-                        <option value="g" data-factor="0.001">gram</option>
-                        <option value="lb" data-factor="0.45359237">pound</option>
+                        <option factor="1">kilogram</option>
+                        <option factor="0.001">gram</option>
+                        <option factor="0.45359237">pound</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="mass-to">To</label>
                     <input type="number" id="mass-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="mass-unit-to">
-                        <option value="kg" data-factor="1">kilogram</option>
-                        <option value="g" data-factor="0.001">gram</option>
-                        <option value="lb" data-factor="0.45359237">pound</option>
+                        <option factor="1">kilogram</option>
+                        <option factor="0.001">gram</option>
+                        <option factor="0.45359237">pound</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="mass-convert">Convert</button>
+                <button type="button" class="convert-btn" id="mass-convert" onclick="Convert('M')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="volume-form">
             <fieldset>
                 <legend>Volume</legend>
                 <div class="form-rw">
                     <label for="volume-from">From</label>
                     <input type="number" id="volume-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="volume-unit-from">
-                        <option value="m^3" data-factor="1">cubic meter</option>
-                        <option value="L" data-factor="0.001">liter</option>
-                        <option value="mL" data-factor="0.000001">milliliter</option>
-                        <option value="ft^3" data-factor="0.028316846592">cubic foot</option>
+                        <option factor="1">cubic meter</option>
+                        <option factor="0.001">liter</option>
+                        <option factor="0.000001">milliliter</option>
+                        <option factor="0.028316846592">cubic foot</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="volume-to">To</label>
                     <input type="number" id="volume-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="volume-unit-to">
-                        <option value="m^3" data-factor="1">cubic meter</option>
-                        <option value="L" data-factor="0.001">liter</option>
-                        <option value="mL" data-factor="0.000001">milliliter</option>
-                        <option value="ft^3" data-factor="0.028316846592">cubic foot</option>
+                        <option factor="1">cubic meter</option>
+                        <option factor="0.001">liter</option>
+                        <option factor="0.000001">milliliter</option>
+                        <option factor="0.028316846592">cubic foot</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="volume-convert">Convert</button>
+                <button type="button" class="convert-btn" id="volume-convert" onclick="Convert('V')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="density-form">
             <fieldset>
                 <legend>Density</legend>
                 <div class="form-rw">
                     <label for="density-from">From</label>
                     <input type="number" id="density-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="density-unit-from">
-                        <option value="kg/m^3" data-factor="1">kilogram per cubic meter</option>
-                        <option value="g/cm^3" data-factor="1000">gram per cubic centimeter</option>
+                        <option factor="1">kilogram per cubic meter</option>
+                        <option factor="1000">gram per cubic centimeter</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="density-to">To</label>
                     <input type="number" id="density-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="density-unit-to">
-                        <option value="kg/m^3" data-factor="1">kilogram per cubic meter</option>
-                        <option value="g/cm^3" data-factor="1000">gram per cubic centimeter</option>
+                        <option factor="1">kilogram per cubic meter</option>
+                        <option factor="1000">gram per cubic centimeter</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="density-convert">Convert</button>
+                <button type="button" class="convert-btn" id="density-convert" onclick="Convert('D')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="dynvisc-form">
             <fieldset>
-                <legend>Viscosity — Dynamic</legend>
+                <legend>Dynamic Viscosity</legend>
                 <div class="form-rw">
                     <label for="dynvisc-from">From</label>
                     <input type="number" id="dynvisc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="dynvisc-unit-from">
-                        <option value="Pa*s" data-factor="1">pascal second</option>
-                        <option value="mPa*s" data-factor="0.001">millipascal second (cP)</option>
+                        <option factor="1">pascal second</option>
+                        <option factor="0.001">millipascal second (cP)</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="dynvisc-to">To</label>
                     <input type="number" id="dynvisc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="dynvisc-unit-to">
-                        <option value="Pa*s" data-factor="1">pascal second</option>
-                        <option value="mPa*s" data-factor="0.001">millipascal second (cP)</option>
+                        <option factor="1">pascal second</option>
+                        <option factor="0.001">millipascal second (cP)</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="dynvisc-convert">Convert</button>
+                <button type="button" class="convert-btn" id="dynvisc-convert" onclick="Convert('DV')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="kinvisc-form">
             <fieldset>
-                <legend>Viscosity — Kinematic</legend>
+                <legend>Kinematic Viscosity</legend>
                 <div class="form-rw">
                     <label for="kinvisc-from">From</label>
                     <input type="number" id="kinvisc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="kinvisc-unit-from">
-                        <option value="m^2/s" data-factor="1">square meter per second</option>
-                        <option value="St" data-factor="0.0001">stokes</option>
+                        <option factor="1">square meter per second</option>
+                        <option factor="0.0001">stokes</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="kinvisc-to">To</label>
                     <input type="number" id="kinvisc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="kinvisc-unit-to">
-                        <option value="m^2/s" data-factor="1">square meter per second</option>
-                        <option value="St" data-factor="0.0001">stokes</option>
+                        <option factor="1">square meter per second</option>
+                        <option factor="0.0001">stokes</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="kinvisc-convert">Convert</button>
+                <button type="button" class="convert-btn" id="kinvisc-convert" onclick="Convert('KV')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="surftens-form">
             <fieldset>
                 <legend>Surface Tension</legend>
                 <div class="form-rw">
                     <label for="surftens-from">From</label>
                     <input type="number" id="surftens-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="surftens-unit-from">
-                        <option value="N/m" data-factor="1">newton per meter</option>
-                        <option value="dyn/cm" data-factor="0.001">dyne per centimeter</option>
+                        <option factor="1">newton per meter</option>
+                        <option factor="0.001">dyne per centimeter</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="surftens-to">To</label>
                     <input type="number" id="surftens-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="surftens-unit-to">
-                        <option value="N/m" data-factor="1">newton per meter</option>
-                        <option value="dyn/cm" data-factor="0.001">dyne per centimeter</option>
+                        <option factor="1">newton per meter</option>
+                        <option factor="0.001">dyne per centimeter</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="surftens-convert">Convert</button>
+                <button type="button" class="convert-btn" id="surftens-convert" onclick="Convert('ST')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form style="display: none" id="perm-form">
             <fieldset>
                 <legend>Permeability</legend>
                 <div class="form-rw">
                     <label for="perm-from">From</label>
                     <input type="number" id="perm-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="perm-unit-from">
-                        <option value="darcy" data-factor="9.869233e-13">darcy</option>
-                        <option value="m^2" data-factor="1">square meter</option>
+                        <option factor="9.869233e-13">darcy</option>
+                        <option factor="1">square meter</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="perm-to">To</label>
                     <input type="number" id="perm-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="perm-unit-to">
-                        <option value="darcy" data-factor="9.869233e-13">darcy</option>
-                        <option value="m^2" data-factor="1">square meter</option>
+                        <option factor="9.869233e-13">darcy</option>
+                        <option factor="1">square meter</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="perm-convert">Convert</button>
+                <button type="button" class="convert-btn" id="perm-convert" onclick="Convert('P')">Convert</button>
             </fieldset>
         </form>
     </section>
