@@ -290,7 +290,7 @@ section {
 }
 .intro .content .text .scroll:nth-child(odd){
     filter: brightness(1);
-    transition: 2s ease-in-out infinite alternate, filter 2s ease-in-out, opacity 2s ease-in-out;
+    transition: 1s ease-in-out infinite alternate, filter 1s ease-in-out, opacity 1s ease-in-out;
     opacity: 0;
 }
 .intro .content .text .scroll:nth-child(odd).view{
@@ -548,7 +548,7 @@ form{
     border-radius: 20px;
     padding: 2rem;
     backdrop-filter: blur(15px);
-    transition: all 1s ease-in-out 1.2s;
+    transition: all 0.69s ease-in-out 1s;
 }
 .sample .content .scroll:nth-child(2){
     transform: scale(0.95);
@@ -863,10 +863,13 @@ footer .lanc span {
 }
 @media (max-width: 768px) {
     header nav ul {
-        display: none;
+        flex-direction: column;
     }
     header nav{
         top: 80%;
+    }
+    .intro{
+        transform: translateY(-150px);
     }
     .intro .content {
         flex-direction: column;
@@ -894,9 +897,6 @@ footer .lanc span {
 @media (max-width: 480px) {
     header nav {
         padding: 0.5rem 1rem;
-    }
-    .intro{
-        transform: translate(100px);
     }
     .converter-form {
         padding: 1.5rem;
