@@ -80,7 +80,7 @@ addEventListener("DOMContentLoaded", () => {
     })();
 });
 
-function Convert(){
+function ConvertCurrency(){
     // Get the elements for conversion
     let from = document.getElementById("currency-from");
     let to = document.getElementById("currency-to");
@@ -114,3 +114,23 @@ document.getElementById("joke-form").addEventListener("submit", async (event) =>
         joketext.textContent = "Failed to fetch joke. Please try again later.";
     }
 });
+
+
+function ConvertLength(){
+    // Get the elements for conversion
+    let from = document.getElementById("input");
+    let to = document.getElementById("output");
+    let unitFrom = document.getElementById("units-selection");
+    let unitTo = document.getElementById("units-values");
+
+    // Get text fields, inputs and factors for conversion
+    let selectedUnitFrom = unitFrom.options[unitFrom.selectedIndex];
+    let selectedUnitTo = unitTo.options[unitTo.selectedIndex];
+    let valueFrom = parseFloat(from.value);
+    let factorFrom = parseFloat(selectedUnitFrom.getAttribute("factor"));
+    let factorTo = parseFloat(selectedUnitTo.getAttribute("factor"));
+
+    //convert using values and factors
+    let result = (valueFrom * factorFrom) / factorTo;
+    to.value = result;
+}

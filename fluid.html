@@ -26,7 +26,7 @@
         <form>
             <label style="display: block" for="quantity-selector">Selected your desired physical quantity:</label>
             <select id="quantity-selector">
-                <option value="N">Select</option>
+                <option value="N" selected>Choose your physical quantity</option>
                 <option value="VF">Volume Flow Rate</option>
                 <option value="MF">Mass Flow Rate</option>
                 <option value="CM">Concentration(Molar)</option>
@@ -48,6 +48,7 @@
                     <label for="volumeflow-from">From</label>
                     <input type="number" id="volumeflow-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="volumeflow-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">cubic meter per second</option>
                         <option factor="0.001">liter per second</option>
                         <option factor="0.000277778">cubic meter per hour</option>
@@ -58,6 +59,7 @@
                     <label for="volumeflow-to">To</label>
                     <input type="number" id="volumeflow-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="volumeflow-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">cubic meter per second</option>
                         <option factor="0.001">liter per second</option>
                         <option factor="0.000277778">cubic meter per hour</option>
@@ -74,6 +76,7 @@
                     <label for="massflow-from">From</label>
                     <input type="number" id="massflow-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="massflow-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram per second</option>
                         <option factor="0.001">gram per second</option>
                         <option factor="0.000277778">kilogram per hour</option>
@@ -84,6 +87,7 @@
                     <label for="massflow-to">To</label>
                     <input type="number" id="massflow-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="massflow-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram per second</option>
                         <option factor="0.001">gram per second</option>
                         <option factor="0.000277778">kilogram per hour</option>
@@ -100,6 +104,7 @@
                     <label for="molconc-from">From</label>
                     <input type="number" id="molconc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="molconc-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">mole per cubic meter</option>
                         <option factor="1000">mole per liter (M)</option>
                     </select>
@@ -108,6 +113,7 @@
                     <label for="molconc-to">To</label>
                     <input type="number" id="molconc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="molconc-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">mole per cubic meter</option>
                         <option factor="1000">mole per liter (M)</option>
                     </select>
@@ -122,6 +128,7 @@
                     <label for="solconc-from">From</label>
                     <input type="number" id="solconc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="solconc-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">milligram per liter</option>
                         <option factor="1">parts per million</option>
                         <option factor="10000">percent (w/v)</option>
@@ -131,6 +138,7 @@
                     <label for="solconc-to">To</label>
                     <input type="number" id="solconc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="solconc-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">milligram per liter</option>
                         <option factor="1">parts per million</option>
                         <option factor="10000">percent (w/v)</option>
@@ -146,6 +154,7 @@
                     <label for="mass-from">From</label>
                     <input type="number" id="mass-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="mass-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram</option>
                         <option factor="0.001">gram</option>
                         <option factor="0.45359237">pound</option>
@@ -155,6 +164,7 @@
                     <label for="mass-to">To</label>
                     <input type="number" id="mass-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="mass-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram</option>
                         <option factor="0.001">gram</option>
                         <option factor="0.45359237">pound</option>
@@ -170,6 +180,7 @@
                     <label for="volume-from">From</label>
                     <input type="number" id="volume-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="volume-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">cubic meter</option>
                         <option factor="0.001">liter</option>
                         <option factor="0.000001">milliliter</option>
@@ -180,6 +191,7 @@
                     <label for="volume-to">To</label>
                     <input type="number" id="volume-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="volume-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">cubic meter</option>
                         <option factor="0.001">liter</option>
                         <option factor="0.000001">milliliter</option>
@@ -196,6 +208,7 @@
                     <label for="density-from">From</label>
                     <input type="number" id="density-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="density-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram per cubic meter</option>
                         <option factor="1000">gram per cubic centimeter</option>
                     </select>
@@ -204,6 +217,7 @@
                     <label for="density-to">To</label>
                     <input type="number" id="density-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="density-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">kilogram per cubic meter</option>
                         <option factor="1000">gram per cubic centimeter</option>
                     </select>
@@ -218,6 +232,7 @@
                     <label for="dynvisc-from">From</label>
                     <input type="number" id="dynvisc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="dynvisc-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">pascal second</option>
                         <option factor="0.001">millipascal second (cP)</option>
                     </select>
@@ -226,6 +241,7 @@
                     <label for="dynvisc-to">To</label>
                     <input type="number" id="dynvisc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="dynvisc-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">pascal second</option>
                         <option factor="0.001">millipascal second (cP)</option>
                     </select>
@@ -240,6 +256,7 @@
                     <label for="kinvisc-from">From</label>
                     <input type="number" id="kinvisc-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="kinvisc-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">square meter per second</option>
                         <option factor="0.0001">stokes</option>
                     </select>
@@ -248,6 +265,7 @@
                     <label for="kinvisc-to">To</label>
                     <input type="number" id="kinvisc-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="kinvisc-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">square meter per second</option>
                         <option factor="0.0001">stokes</option>
                     </select>
@@ -262,6 +280,7 @@
                     <label for="surftens-from">From</label>
                     <input type="number" id="surftens-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="surftens-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton per meter</option>
                         <option factor="0.001">dyne per centimeter</option>
                     </select>
@@ -270,6 +289,7 @@
                     <label for="surftens-to">To</label>
                     <input type="number" id="surftens-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="surftens-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="1">newton per meter</option>
                         <option factor="0.001">dyne per centimeter</option>
                     </select>
@@ -284,6 +304,7 @@
                     <label for="perm-from">From</label>
                     <input type="number" id="perm-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="perm-unit-from">
+                        <option selected>Choose your unit</option>
                         <option factor="9.869233e-13">darcy</option>
                         <option factor="1">square meter</option>
                     </select>
@@ -292,6 +313,7 @@
                     <label for="perm-to">To</label>
                     <input type="number" id="perm-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="perm-unit-to">
+                        <option selected>Choose your unit</option>
                         <option factor="9.869233e-13">darcy</option>
                         <option factor="1">square meter</option>
                     </select>
