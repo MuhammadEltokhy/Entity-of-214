@@ -84,6 +84,24 @@
             </article>
         </section>
     </section>
+    <form>
+        <fieldset>
+            <legend>Currency</legend>
+            <div class="form-rw">
+                <label for="currency-from">From</label>
+                <input type="number" id="currency-from" step="any" inputmode="decimal" placeholder="Enter value">
+                <select id="currency-unit-from">
+                </select>
+            </div>
+            <div class="form-rw">
+                <label for="currency-to">To</label>
+                <input type="number" id="currency-to" readonly aria-readonly="true" placeholder="Result">
+                <select id="currency-unit-to">
+                </select>
+            </div>
+            <button type="button" class="convert-btn" id="currency-convert" onclick="Convert()">Convert</button>
+        </fieldset>
+    </form>
     <footer>
         <section class="sample">
         <section class="content">
