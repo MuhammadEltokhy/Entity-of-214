@@ -1,5 +1,5 @@
-CheckMode();
-function CheckMode() {
+SetMode();
+function SetMode() {
     //Check if currentmode is present or not to set it
     if(localStorage.getItem("currentmode") === null) {
         localStorage.setItem("currentmode", "false");
@@ -32,36 +32,39 @@ function ConvertMode() {
 }
 
 addEventListener("DOMContentLoaded", () => {
-    // Fetch latest exchange rates from Currency API
-    fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=3a72a40aeb894b739af4b3af25c9bf27")
-    .then(result => result.json())
-    .then(currency => {
-        // Get select elements
-        let currencyFrom=document.getElementById("currency-unit-from");
-        let currencyTo=document.getElementById("currency-unit-to");
-        
-        // Create list of currency codes
-        let currencies=['1INCH', 'AED', 'AERGO', 'AGLD', 'ALGO', 'ANKR', 'ANT', 'APE', 'APT', 'AR', 'ARB', 'ARKM', 'ASTR', 'ATOM', 'AVAX', 'AXS', 'AZERO', 'BAND', 'BCH', 'BDT', 'BGN', 'BHD', 'BMD', 'BNB', 'BNT', 'BOBA', 'BRL', 'BSD', 'BSV', 'BTC', 'BTRST', 'BUSD', 'CAD', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHZ', 'CLP', 'CNY', 'COMP', 'COP', 'CORE', 'CRC', 'CRO', 'CRV', 'CTSI', 'CVC', 'CZK', 'DAI', 'DAR', 'DASH', 'DCR', 'DFI', 'DGB', 'DOGE', 'DOP', 'DOT', 'DYM', 'DZD', 'EGLD', 'ENS', 'EOS', 'ERN', 'ETB', 'ETH', 'EUR', 'FET', 'FIL', 'FLOKI', 'FLOW', 'FORTH', 'FRAX', 'FTM', 'FXS', 'GAL', 'GALA', 'GEL', 'GLMR', 'GMT', 'GMX', 'GRT', 'GTC', 'HBAR', 'HKD', 'HNL', 'HNT', 'HUF', 'ICP', 'IDR', 'ILS', 'IMX', 'INJ', 'INR', 'IOTX', 'ISK', 'JEP', 'JMD', 'JOD', 'JPY', 'KAVA', 'KES', 'KLAY', 'KMF', 'KRW', 'KSM', 'KYD', 'LAK', 'LDO', 'LINK', 'LKR', 'LRC', 'LSK', 'LTC', 'LUNA', 'LUNC', 'MAD', 'MANA', 'MATIC', 'MGA', 'MINA', 'MKR', 'MMK', 'MNT', 'MOP', 'MRO', 'MUR', 'MVR', 'MWK', 'MXN', 'MYR', 'MZN', 'NAD', 'NEAR', 'NEO', 'NGN', 'NIO', 'NOK', 'NPR', 'NZD', 'OMR', 'OP', 'ORDI', 'PAB', 'PEPE', 'PEN', 'PERP', 'PGK', 'PHP', 'PKR', 'PLN', 'PYG', 'QAR', 'QNT', 'QUICK', 'RON', 'RSD', 'RUB', 'RWF', 'SAND', 'SAR', 'SBD', 'SCR', 'SEK', 'SGD', 'SHIB', 'SHP', 'SLL', 'SOL', 'SRD', 'SSP', 'STD', 'STG', 'STORJ', 'STRAX', 'STX', 'SUI', 'SVC', 'SYP', 'SZL', 'THB', 'TIME', 'TJS', 'TMM', 'TMT', 'TND', 'TON', 'TOP', 'TRX', 'TRY', 'TTD', 'TWD', 'TZS', 'UAH', 'UGX', 'UNI', 'USD', 'USDC', 'USDP', 'USDT', 'UYU', 'UZS', 'VEF', 'VND', 'VUV', 'WAVES', 'WST', 'XAF', 'XAG', 'XAU', 'XCD', 'XCH', 'XCN', 'XDR', 'XEC', 'XEM', 'XLM', 'XMR', 'XOF', 'XPD', 'XPF', 'XPT', 'XRP', 'XTZ', 'YER', 'ZAR', 'ZEC', 'ZMK', 'ZMW', 'ZRX', 'ZYR'];
-        
-        // Add currencies options and factors to the select elements 
-        for(let i=0 ;i<currencies.length ;i++){
-            let optionFrom = document.createElement("option");
-            optionFrom.setAttribute("factor", currency.rates[currencies[i]]);
-            optionFrom.textContent = currencies[i];
-            currencyFrom.appendChild(optionFrom);
+    (async () => {
+        try {
+            // Fetch latest exchange rates from Currency API
+            let result = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=3a72a40aeb894b739af4b3af25c9bf27");
+            let currency = await result.json();
 
-            let optionTo = document.createElement("option");
-            optionTo.setAttribute("factor", currency.rates[currencies[i]]);
-            optionTo.textContent = currencies[i];
-            currencyTo.appendChild(optionTo);
+            // Get select elements
+            let currencyFrom=document.getElementById("currency-unit-from");
+            let currencyTo=document.getElementById("currency-unit-to");
+            
+            // Create list of currency codes and sorting it
+            let currencies= Object.keys(currency.rates);
+            currencies.sort();
 
+            // Add currencies options and factors to the select elements
+            for(let i=0 ;i<currencies.length ;i++){
+                let optionFrom = document.createElement("option");
+                optionFrom.setAttribute("factor", currency.rates[currencies[i]]);
+                optionFrom.textContent = currencies[i];
+                currencyFrom.appendChild(optionFrom);
+
+                let optionTo = document.createElement("option");
+                optionTo.setAttribute("factor", currency.rates[currencies[i]]);
+                optionTo.textContent = currencies[i];
+                currencyTo.appendChild(optionTo);
+            }
+        }   
+        catch(error){
+            // Handle errors
+            console.error("Error fetching currency data:", error);
+            alert("Failed to fetch currency data. Please try again later.");
         }
-    })
-    .catch(error => {
-        // Handle errors
-        console.error("Error fetching currency data:", error);
-        alert("Failed to fetch currency data.");
-    });
+    })();
 });
 
 function Convert(){
@@ -82,3 +85,19 @@ function Convert(){
     let result = (valueFrom * factorTo) / factorFrom;
     to.value = result;
 }
+
+document.getElementById("joke-form").addEventListener("submit", async (event) => {
+    // Stop form from refreshing the page. Get the element where the joke will be displayed
+    event.preventDefault();
+    let joketext = document.getElementById("joke");
+
+    try {
+        // Fetch a random joke from the API and converting it to JSON.
+        const result = await fetch("https://api.chucknorris.io/jokes/random");
+        const jokes = await result.json();
+        joketext.textContent = jokes.value;
+    } catch (error) {
+        // Handle errors
+        joketext.textContent = "Failed to fetch joke. Please try again later.";
+    }
+});

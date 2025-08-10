@@ -1,5 +1,5 @@
-CheckMode();
-function CheckMode() {
+SetMode();
+function SetMode() {
     //Check if currentmode is present or not to set it
     if(localStorage.getItem("currentmode") === null) {
         localStorage.setItem("currentmode", "false");
