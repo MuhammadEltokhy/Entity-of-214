@@ -46,9 +46,12 @@
             </article>
             <article class="about scroll">
                 <h1 class="scroll">About <span class="scroll">Units</span></h1>
-                <p class="scroll">This is Unity. A simple, flexible, accurate units convertor tool 
-                    that helps you in your physics class. With Unity, you can change from 
-                    specific unit to another like a flash! What do you wait to do that?</p>
+                <p class="scroll">In physics, units are standardized quantities used to 
+                    measure and express physical properties such as length, mass, time, temperature, 
+                    and electric current. They provide a common language for scientists and engineers 
+                    to communicate measurements accurately and compare results consistently. 
+                    Without units, numerical values would be meaningless, as the context of what 
+                    is being measured would be unclear.</p>
             </article>
         </section>
     </section>
@@ -56,9 +59,12 @@
         <section class="content scroll">
             <article class="text scroll">
                 <h1 class="scroll">SI Units</h1>
-                <p class="scroll">This is Unity. A simple, flexible, accurate units convertor tool 
-                    that helps you in your physics class. With Unity, you can change from 
-                    specific unit to another like a flash! What do you wait to do that?</p>
+                <p class="scroll">The International System of Units (SI) is the globally accepted standard for measurement, 
+                    based on seven fundamental units: meter (m) for length, kilogram (kg) for mass, 
+                    second (s) for time, kelvin (K) for temperature, ampere (A) for electric current, 
+                    mole (mol) for the amount of substance, and candela (cd) for luminous intensity. 
+                    All other physical quantities, called derived quantities, are expressed in terms of 
+                    these base units to ensure uniformity in science and engineering worldwide.</p>
             </article>
             <article class="units scroll">
                 <div class="icon-wp scroll">
@@ -67,33 +73,47 @@
             </article>
         </section>
     </section>
-    <form>
+
+
+    <section class="sample">
+        <section class="content">
+            <form class="scroll">
         <fieldset>
             <legend>Currency</legend>
-            <div class="form-rw">
-                <label for="currency-from">From</label>
-                <input type="number" id="currency-from" step="any" inputmode="decimal" placeholder="Enter value">
-                <select id="currency-unit-from">
-                </select>
+            <div class="form-group scroll">
+                <label for="currency-from" class="input scroll">From</label>
+                <div class="input scroll">
+                    <input class="input scroll" type="number" id="currency-from" step="any" inputmode="decimal" placeholder="Enter value">
+                    <select id="currency-unit-from" class="scroll">
+                    </select>
+                </div>
             </div>
-            <div class="form-rw">
-                <label for="currency-to">To</label>
-                <input type="number" id="currency-to" readonly aria-readonly="true" placeholder="Result">
-                <select id="currency-unit-to">
-                </select>
+            <div class="form-group scroll">
+                <label for="currency-to" class="output scroll">To</label>
+                <div class="output scroll">
+                    <input class="scroll" type="number" id="currency-to" readonly aria-readonly="true" placeholder="Result">
+                    <select id="currency-unit-to" class="scroll">
+                    </select>
+                </div>
             </div>
             <button type="button" class="convert-btn" id="currency-convert" onclick="ConvertCurrency()">Convert</button>
         </fieldset>
     </form>
-    <form id="joke-form">
-        <fieldset>
-            <legend>Do you want to hear a joke?</legend>
-            <div class="form-rw">
-                <p id="joke"></p>
-                <input type="submit" class="convert-btn" id="submit" value="Give me a joke">
-            </div>
-        </fieldset>
-    </form>
+        </section>
+    </section>
+    <section class="sample">
+        <section class="content">
+            <form id="joke-form" class="scroll">
+                <fieldset>
+                    <legend>Do you want to hear a joke?</legend>
+                    <div class="form-group">
+                        <p id="joke"></p>
+                        <input type="submit" class="convert-btn" id="submit" value="Give me a joke">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </section>
     <section class="sample scroll">
         <section class="content scroll">
             <span class="scroll">Try a sample of our convertors, and convert to your own meter unit.</span>
@@ -242,4 +262,3 @@
     <script src="index.js"></script>
 </body>
 </html>
-
