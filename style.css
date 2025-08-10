@@ -869,9 +869,6 @@ footer .lanc span {
     header nav{
         top: 80%;
     }
-    .menu-toggle {
-        display: flex;
-    }
     .intro .content {
         flex-direction: column;
         text-align: center;
@@ -899,21 +896,16 @@ footer .lanc span {
     header nav {
         padding: 0.5rem 1rem;
     }
-
-    .floating-icon {
-        width: 30px;
-        height: 30px;
+    .intro{
+        transform: translate(100px);
     }
-
     .converter-form {
         padding: 1.5rem;
     }
-
     .input, .output {
         flex-direction: column;
         gap: 10px;
     }
-
     .outro .links {
         flex-direction: column;
         gap: 1rem;
