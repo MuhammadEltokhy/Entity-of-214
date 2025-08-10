@@ -257,6 +257,9 @@ section {
     position: relative;
     z-index: 2;
 }
+.space {
+    display: none;
+}
 .intro{
     min-height: 100vh;
     display: flex;
@@ -869,10 +872,10 @@ footer .lanc span {
     header nav{
         top: 80%;
     }
-    .menu-toggle {
-        display: flex;
+    .space{
+        display: auto;
     }
-    .intro .content {
+    .intro .content{
         flex-direction: column;
         text-align: center;
         gap: 2rem;

@@ -257,6 +257,9 @@ section {
     position: relative;
     z-index: 2;
 }
+.space{
+    display: none;
+}
 .intro{
     min-height: 100vh;
     display: flex;
@@ -867,6 +870,9 @@ footer .lanc span {
     }
     header nav{
         top: 80%;
+    }
+    .space{
+        display: auto;
     }
     .intro{
         transform: translateY(-150px);
