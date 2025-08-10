@@ -24,313 +24,309 @@
     </header>
     <section class="converter">
         <form>
+            <label style="display: block" for="quantity-selector">Selected your desired physical quantity:</label>
+            <select id="quantity-selector">
+                <option value="N">Select</option>
+                <option value="A">Area</option>
+                <option value="E">Energy</option>
+                <option value="F">Force</option>
+                <option value="S">Speed</option>
+                <option value="D">Data Storage</option>
+                <option value="C">Acceleration</option>
+                <option value="T">Torque</option>
+                <option value="P">Pressure</option>
+                <option value="t">Time</option>
+                <option value="G">Angle</option>
+                <option value="M">Moment of Inertia</option>
+            </select>
+            <input type="button" id="quantity-selector-btn" value="Select Quantity" onclick="SelectQuantity()">
+        </form>
+        <form id="area-form" style="display: none;">
             <fieldset>
                 <legend>Area</legend>
                 <div class="form-rw">
                     <label for="area-from">From</label>
                     <input type="number" id="area-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="area-unit-from">
-                        <option value="m^2" data-factor="1">square meter</option>
-                        <option value="km^2" data-factor="1000000">square kilometer</option>
-                        <option value="cm^2" data-factor="0.0001">square centimeter</option>
-                        <option value="ha" data-factor="10000">hectare</option>
-                        <option value="ac" data-factor="4046.8564224">acre</option>
-                        <option value="ft^2" data-factor="0.09290304">square foot</option>
-                        <option value="in^2" data-factor="0.00064516">square inch</option>
+                        <option factor="1">square meter</option>
+                        <option factor="1000000">square kilometer</option>
+                        <option factor="0.0001">square centimeter</option>
+                        <option factor="10000">hectare</option>
+                        <option factor="4046.8564224">acre</option>
+                        <option factor="0.09290304">square foot</option>
+                        <option factor="0.00064516">square inch</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="area-to">To</label>
                     <input type="number" id="area-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="area-unit-to">
-                        <option value="m^2" data-factor="1">square meter</option>
-                        <option value="km^2" data-factor="1000000">square kilometer</option>
-                        <option value="cm^2" data-factor="0.0001">square centimeter</option>
-                        <option value="ha" data-factor="10000">hectare</option>
-                        <option value="ac" data-factor="4046.8564224">acre</option>
-                        <option value="ft^2" data-factor="0.09290304">square foot</option>
-                        <option value="in^2" data-factor="0.00064516">square inch</option>
+                        <option factor="1">square meter</option>
+                        <option factor="1000000">square kilometer</option>
+                        <option factor="0.0001">square centimeter</option>
+                        <option factor="10000">hectare</option>
+                        <option factor="4046.8564224">acre</option>
+                        <option factor="0.09290304">square foot</option>
+                        <option factor="0.00064516">square inch</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="area-convert">Convert</button>
+                <button type="button" class="convert-btn" id="area-convert" onclick="Convert('A')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="energy-form" style="display: none;">
             <fieldset>
                 <legend>Energy</legend>
                 <div class="form-rw">
                     <label for="energy-from">From</label>
                     <input type="number" id="energy-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="energy-unit-from">
-                        <option value="J" data-factor="1">joule</option>
-                        <option value="kJ" data-factor="1000">kilojoule</option>
-                        <option value="cal" data-factor="4.184">calorie</option>
-                        <option value="kcal" data-factor="4184">kilocalorie</option>
-                        <option value="eV" data-factor="1.602176634e-19">electronvolt</option>
-                        <option value="BTU" data-factor="1055.05585262">BTU</option>
+                        <option factor="1">joule</option>
+                        <option factor="1000">kilojoule</option>
+                        <option factor="4.184">calorie</option>
+                        <option factor="4184">kilocalorie</option>
+                        <option factor="1.602176634e-19">electronvolt</option>
+                        <option factor="1055.05585262">BTU</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="energy-to">To</label>
                     <input type="number" id="energy-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="energy-unit-to">
-                        <option value="J" data-factor="1">joule</option>
-                        <option value="kJ" data-factor="1000">kilojoule</option>
-                        <option value="cal" data-factor="4.184">calorie</option>
-                        <option value="kcal" data-factor="4184">kilocalorie</option>
-                        <option value="eV" data-factor="1.602176634e-19">electronvolt</option>
-                        <option value="BTU" data-factor="1055.05585262">BTU</option>
+                        <option factor="1">joule</option>
+                        <option factor="1000">kilojoule</option>
+                        <option factor="4.184">calorie</option>
+                        <option factor="4184">kilocalorie</option>
+                        <option factor="1.602176634e-19">electronvolt</option>
+                        <option factor="1055.05585262">BTU</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="energy-convert">Convert</button>
+                <button type="button" class="convert-btn" id="energy-convert" onclick="Convert('E')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="force-form" style="display: none;">
             <fieldset>
                 <legend>Force</legend>
                 <div class="form-rw">
                     <label for="force-from">From</label>
                     <input type="number" id="force-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="force-unit-from">
-                        <option value="N" data-factor="1">newton</option>
-                        <option value="kN" data-factor="1000">kilonewton</option>
-                        <option value="lbf" data-factor="4.4482216152605">pound-force</option>
-                        <option value="dyn" data-factor="0.00001">dyne</option>
+                        <option factor="1">newton</option>
+                        <option factor="1000">kilonewton</option>
+                        <option factor="4.4482216152605">pound-force</option>
+                        <option factor="0.00001">dyne</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="force-to">To</label>
                     <input type="number" id="force-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="force-unit-to">
-                        <option value="N" data-factor="1">newton</option>
-                        <option value="kN" data-factor="1000">kilonewton</option>
-                        <option value="lbf" data-factor="4.4482216152605">pound-force</option>
-                        <option value="dyn" data-factor="0.00001">dyne</option>
+                        <option factor="1">newton</option>
+                        <option factor="1000">kilonewton</option>
+                        <option factor="4.4482216152605">pound-force</option>
+                        <option factor="0.00001">dyne</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="force-convert">Convert</button>
+                <button type="button" class="convert-btn" id="force-convert" onclick="Convert('F')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="speed-form" style="display: none;">
             <fieldset>
                 <legend>Speed</legend>
                 <div class="form-rw">
                     <label for="speed-from">From</label>
                     <input type="number" id="speed-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="speed-unit-from">
-                        <option value="m/s" data-factor="1">meter per second</option>
-                        <option value="km/h" data-factor="0.277777778">kilometer per hour</option>
-                        <option value="mph" data-factor="0.44704">mile per hour</option>
-                        <option value="kt" data-factor="0.514444444">knot</option>
+                        <option factor="1">meter per second</option>
+                        <option factor="0.277777778">kilometer per hour</option>
+                        <option factor="0.44704">mile per hour</option>
+                        <option factor="0.514444444">knot</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="speed-to">To</label>
                     <input type="number" id="speed-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="speed-unit-to">
-                        <option value="m/s" data-factor="1">meter per second</option>
-                        <option value="km/h" data-factor="0.277777778">kilometer per hour</option>
-                        <option value="mph" data-factor="0.44704">mile per hour</option>
-                        <option value="kt" data-factor="0.514444444">knot</option>
+                        <option factor="1">meter per second</option>
+                        <option factor="0.277777778">kilometer per hour</option>
+                        <option factor="0.44704">mile per hour</option>
+                        <option factor="0.514444444">knot</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="speed-convert">Convert</button>
+                <button type="button" class="convert-btn" id="speed-convert" onclick="Convert('S')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="data-form" style="display: none;">
             <fieldset>
                 <legend>Data Storage</legend>
                 <div class="form-rw">
                     <label for="data-from">From</label>
                     <input type="number" id="data-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="data-unit-from">
-                        <option value="b" data-factor="1">bit</option>
-                        <option value="B" data-factor="8">byte</option>
-                        <option value="kB" data-factor="8000">kilobyte (decimal)</option>
-                        <option value="KB" data-factor="8192">kilobyte (binary 1024)</option>
-                        <option value="MB" data-factor="8000000">megabyte</option>
-                        <option value="GB" data-factor="8000000000">gigabyte</option>
+                        <option factor="1">bit</option>
+                        <option factor="8">byte</option>
+                        <option factor="8000">kilobyte (decimal)</option>
+                        <option factor="8192">kilobyte (binary 1024)</option>
+                        <option factor="8000000">megabyte</option>
+                        <option factor="8000000000">gigabyte</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="data-to">To</label>
                     <input type="number" id="data-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="data-unit-to">
-                        <option value="b" data-factor="1">bit</option>
-                        <option value="B" data-factor="8">byte</option>
-                        <option value="kB" data-factor="8000">kilobyte (decimal)</option>
-                        <option value="KB" data-factor="8192">kilobyte (binary 1024)</option>
-                        <option value="MB" data-factor="8000000">megabyte</option>
-                        <option value="GB" data-factor="8000000000">gigabyte</option>
+                        <option factor="1">bit</option>
+                        <option factor="8">byte</option>
+                        <option factor="8000">kilobyte (decimal)</option>
+                        <option factor="8192">kilobyte (binary 1024)</option>
+                        <option factor="8000000">megabyte</option>
+                        <option factor="8000000000">gigabyte</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="data-convert">Convert</button>
+                <button type="button" class="convert-btn" id="data-convert" onclick="Convert('D')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="acceleration-form" style="display: none;">
             <fieldset>
                 <legend>Acceleration</legend>
                 <div class="form-rw">
                     <label for="acceleration-from">From</label>
                     <input type="number" id="acceleration-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="acceleration-unit-from">
-                        <option value="m/s^2" data-factor="1">meter per second squared</option>
-                        <option value="g" data-factor="9.80665">standard gravity</option>
+                        <option factor="1">meter per second squared</option>
+                        <option factor="9.80665">standard gravity</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="acceleration-to">To</label>
                     <input type="number" id="acceleration-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="acceleration-unit-to">
-                        <option value="m/s^2" data-factor="1">meter per second squared</option>
-                        <option value="g" data-factor="9.80665">standard gravity</option>
+                        <option factor="1">meter per second squared</option>
+                        <option factor="9.80665">standard gravity</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="acceleration-convert">Convert</button>
+                <button type="button" class="convert-btn" id="acceleration-convert" onclick="Convert('C')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="torque-form" style="display: none;">
             <fieldset>
                 <legend>Torque</legend>
                 <div class="form-rw">
                     <label for="torque-from">From</label>
                     <input type="number" id="torque-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="torque-unit-from">
-                        <option value="N*m" data-factor="1">newton meter</option>
-                        <option value="lbf*ft" data-factor="1.3558179483314004">pound-foot</option>
+                        <option factor="1">newton meter</option>
+                        <option factor="1.3558179483314004">pound-foot</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="torque-to">To</label>
                     <input type="number" id="torque-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="torque-unit-to">
-                        <option value="N*m" data-factor="1">newton meter</option>
-                        <option value="lbf*ft" data-factor="1.3558179483314004">pound-foot</option>
+                        <option factor="1">newton meter</option>
+                        <option factor="1.3558179483314004">pound-foot</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="torque-convert">Convert</button>
+                <button type="button" class="convert-btn" id="torque-convert" onclick="Convert('T')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="pressure-form" style="display: none;">
             <fieldset>
                 <legend>Pressure</legend>
                 <div class="form-rw">
                     <label for="pressure-from">From</label>
                     <input type="number" id="pressure-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="pressure-unit-from">
-                        <option value="Pa" data-factor="1">pascal</option>
-                        <option value="kPa" data-factor="1000">kilopascal</option>
-                        <option value="bar" data-factor="100000">bar</option>
-                        <option value="atm" data-factor="101325">standard atmosphere</option>
-                        <option value="psi" data-factor="6894.757293168361">pound per square inch</option>
+                        <option factor="1">pascal</option>
+                        <option factor="1000">kilopascal</option>
+                        <option factor="100000">bar</option>
+                        <option factor="101325">standard atmosphere</option>
+                        <option factor="6894.757293168361">pound per square inch</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="pressure-to">To</label>
                     <input type="number" id="pressure-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="pressure-unit-to">
-                        <option value="Pa" data-factor="1">pascal</option>
-                        <option value="kPa" data-factor="1000">kilopascal</option>
-                        <option value="bar" data-factor="100000">bar</option>
-                        <option value="atm" data-factor="101325">standard atmosphere</option>
-                        <option value="psi" data-factor="6894.757293168361">pound per square inch</option>
+                        <option factor="1">pascal</option>
+                        <option factor="1000">kilopascal</option>
+                        <option factor="100000">bar</option>
+                        <option factor="101325">standard atmosphere</option>
+                        <option factor="6894.757293168361">pound per square inch</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="pressure-convert">Convert</button>
+                <button type="button" class="convert-btn" id="pressure-convert" onclick="Convert('P')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="time-form" style="display: none;">
             <fieldset>
                 <legend>Time</legend>
                 <div class="form-rw">
                     <label for="time-from">From</label>
                     <input type="number" id="time-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="time-unit-from">
-                        <option value="s" data-factor="1">second</option>
-                        <option value="min" data-factor="60">minute</option>
-                        <option value="h" data-factor="3600">hour</option>
-                        <option value="day" data-factor="86400">day</option>
+                        <option factor="1">second</option>
+                        <option factor="60">minute</option>
+                        <option factor="3600">hour</option>
+                        <option factor="86400">day</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="time-to">To</label>
                     <input type="number" id="time-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="time-unit-to">
-                        <option value="s" data-factor="1">second</option>
-                        <option value="min" data-factor="60">minute</option>
-                        <option value="h" data-factor="3600">hour</option>
-                        <option value="day" data-factor="86400">day</option>
+                        <option factor="1">second</option>
+                        <option factor="60">minute</option>
+                        <option factor="3600">hour</option>
+                        <option factor="86400">day</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="time-convert">Convert</button>
+                <button type="button" class="convert-btn" id="time-convert" onclick="Convert('t')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="angle-form" style="display: none;">
             <fieldset>
                 <legend>Angle</legend>
                 <div class="form-rw">
                     <label for="angle-from">From</label>
                     <input type="number" id="angle-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="angle-unit-from">
-                        <option value="rad" data-factor="1">radian</option>
-                        <option value="deg" data-factor="0.017453292519943295">degree</option>
-                        <option value="gon" data-factor="0.015707963267948967">grad (gon)</option>
+                        <option factor="1">radian</option>
+                        <option factor="0.017453292519943295">degree</option>
+                        <option factor="0.015707963267948967">grad (gon)</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="angle-to">To</label>
                     <input type="number" id="angle-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="angle-unit-to">
-                        <option value="rad" data-factor="1">radian</option>
-                        <option value="deg" data-factor="0.017453292519943295">degree</option>
-                        <option value="gon" data-factor="0.015707963267948967">grad (gon)</option>
+                        <option factor="1">radian</option>
+                        <option factor="0.017453292519943295">degree</option>
+                        <option factor="0.015707963267948967">grad (gon)</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="angle-convert">Convert</button>
+                <button type="button" class="convert-btn" id="angle-convert" onclick="Convert('G')">Convert</button>
             </fieldset>
         </form>
-        <form>
+        <form id="moment-form" style="display: none;">
             <fieldset>
                 <legend>Moment of Inertia</legend>
                 <div class="form-rw">
                     <label for="moment-from">From</label>
                     <input type="number" id="moment-from" step="any" inputmode="decimal" placeholder="Enter value">
                     <select id="moment-unit-from">
-                        <option value="kg*m^2" data-factor="1">kilogram meter squared</option>
-                        <option value="g*cm^2" data-factor="0.0000001">gram centimeter squared</option>
+                        <option factor="1">kilogram meter squared</option>
+                        <option factor="0.0000001">gram centimeter squared</option>
                     </select>
                 </div>
                 <div class="form-rw">
                     <label for="moment-to">To</label>
                     <input type="number" id="moment-to" readonly aria-readonly="true" placeholder="Result">
                     <select id="moment-unit-to">
-                        <option value="kg*m^2" data-factor="1">kilogram meter squared</option>
-                        <option value="g*cm^2" data-factor="0.0000001">gram centimeter squared</option>
+                        <option factor="1">kilogram meter squared</option>
+                        <option factor="0.0000001">gram centimeter squared</option>
                     </select>
                 </div>
-                <button type="button" class="convert-btn" id="moment-convert">Convert</button>
-            </fieldset>
-        </form>
-        <form>
-            <fieldset>
-                <legend>Momentum</legend>
-                <div class="form-rw">
-                    <label for="momentum-from">From</label>
-                    <input type="number" id="momentum-from" step="any" inputmode="decimal" placeholder="Enter value">
-                    <select id="momentum-unit-from">
-                        <option value="kg*m/s" data-factor="1">kilogram meter per second</option>
-                        <option value="N*s" data-factor="1">newton second</option>
-                    </select>
-                </div>
-                <div class="form-rw">
-                    <label for="momentum-to">To</label>
-                    <input type="number" id="momentum-to" readonly aria-readonly="true" placeholder="Result">
-                    <select id="momentum-unit-to">
-                        <option value="kg*m/s" data-factor="1">kilogram meter per second</option>
-                        <option value="N*s" data-factor="1">newton second</option>
-                    </select>
-                </div>
-                <button type="button" class="convert-btn" id="momentum-convert">Convert</button>
+                <button type="button" class="convert-btn" id="moment-convert" onclick="Convert('M')">Convert</button>
             </fieldset>
         </form>
     </section>
